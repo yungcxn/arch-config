@@ -9,10 +9,13 @@ import os
 
 HOME_LOC = os.path.expanduser("~")
 DOTCONFIG_LOC = HOME_LOC + "/.config"
+ETC_LOC = "/etc"
+
 
 cmap = [
   "home",
   "home/.config",
+  "etc",
 ]
 
 #single files
@@ -32,6 +35,7 @@ gather_from_to = {
   HOME_LOC + "/.oh-my-zsh": cmap[0] + "/.oh-my-zsh",
   HOME_LOC + "/.icons": cmap[0] + "/.icons",
   HOME_LOC + "/.themes": cmap[0] + "/.themes",
+  ETC_LOC + "/greetd": cmap[2] + "/greetd",
 }
 
 gather_singles = {
