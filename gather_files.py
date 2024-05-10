@@ -66,10 +66,3 @@ for key, value in gather_from_to.items():
 # copy files from gather_singles from keys to values
 for key, value in gather_singles.items():
   os.system(f'cp {key} {value}')
-
-
-# add all created files and directorys to git
-os.system('git add .')
-
-# print git status
-os.system('git status')
