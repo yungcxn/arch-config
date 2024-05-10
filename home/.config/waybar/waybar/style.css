@@ -1,0 +1,110 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: RobotoMono Nerd Font;
+    font-weight: bold;
+    font-size: 13px;
+    min-height: 0;
+}
+
+tooltip {
+  border: 1px solid #7dcfff;
+}
+
+window#waybar {
+    background: transparent;
+	  background-color: #24283b;
+    opacity: 0.85;
+}
+
+#custom-date, #workspaces, #clock, #battery, #pulseaudio, #network, #custom-launcher, #cpu {
+	padding: 5px 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+#custom-launcher {
+  color: #7dcfff;
+  box-shadow: inset 4px 0px;
+}
+
+#custom-date {
+	color: #7dcfff;
+}
+
+/*
+#custom-discord, #custom-firefox, #custom-thunar, #custom-alacritty,#custom-hypr {
+  padding-left:5px;
+  padding-right:5px;
+  border-radius: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size:120%;
+}
+
+#custom-firefox {
+  color: #f7768e;
+}
+
+#custom-thunar {
+  color: #9ece6a;
+}
+
+#custom-alacritty {
+  color: #e0af68;
+}
+
+#custom-hypr {
+  color: #bb9af7;
+}
+
+#custom-discord {
+  color: #7aa2f7;
+}
+*/
+
+
+#custom-power {
+	color: #24283b;
+	background-color: #bb9af7; /*#db4b4b */
+	border-radius: 5px;
+	margin: 3px;
+	padding: 5px 10px;
+}
+
+#clock {
+  color: #7aa2f7;
+  /*box-shadow: inset -4px 0px;*/
+}
+
+#network {
+	color: #f7768e;
+  /*box-shadow: inset -4px 0px;*/
+}
+
+#pulseaudio {
+  /*box-shadow: inset 4px 0px;*/
+  color: #9ece6a;
+}
+
+
+#workspaces {
+	background-color: #24283b;
+}
+
+#workspaces button {
+  padding: 1px 5px;
+  margin-right: 5px;
+  color: #bb9af7;
+  background-color: #414868;
+}
+
+#workspaces button.active {
+  color: #414868;
+  background-color: #7dcfff;
+}
+
+#workspaces button:hover {
+	background-color: #9ece6a;
+	color: #24283b;
+}

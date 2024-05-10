@@ -1,0 +1,22 @@
+import = [ "~/.config/alacritty/theme.toml" ]
+
+shell = "/bin/zsh"
+
+live_config_reload = true
+
+[window]
+dynamic_padding = false
+  
+
+[window.padding]
+x = 25
+y = 20
+
+[keyboard]
+
+bindings = [
+{key = "C", mods = "Control", action = "Copy" },
+{key = "V", mods = "Control", action = "Paste" },
+{key = "C", mods = "Control | Shift", chars = "\u0003" }
+]
+
