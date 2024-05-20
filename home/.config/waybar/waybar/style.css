@@ -3,7 +3,7 @@
     border-radius: 0;
     font-family: RobotoMono Nerd Font;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 15px;
     min-height: 0;
 }
 
@@ -18,14 +18,13 @@ window#waybar {
 }
 
 #custom-date, #workspaces, #clock, #battery, #pulseaudio, #network, #custom-launcher, #cpu {
-	padding: 5px 3px;
+	padding: 0px 5px;
   margin-left: 3px;
   margin-right: 3px;
 }
 
 #custom-launcher {
   color: #7dcfff;
-  box-shadow: inset 4px 0px;
 }
 
 #custom-date {
@@ -68,8 +67,13 @@ window#waybar {
 	color: #24283b;
 	background-color: #bb9af7; /*#db4b4b */
 	border-radius: 5px;
-	margin: 3px;
-	padding: 5px 10px;
+	margin: 3px 3px;
+	padding: 1px 5px;
+  padding-right: 6px;
+}
+
+#custom-power button:hover {
+	background-color: #9ece6a;
 }
 
 #clock {
@@ -94,7 +98,7 @@ window#waybar {
 
 #workspaces button {
   padding: 1px 5px;
-  margin-right: 5px;
+  margin: 3px 3px;
   color: #bb9af7;
   background-color: #414868;
 }

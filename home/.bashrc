@@ -12,4 +12,6 @@ alias hyprconfig='nvim ~/.config/hypr/hyprland.conf'
 alias hyprthemeconfig='nvim ~/.config/hypr/hyprland-theme.conf'
 alias config='cd ~/.config'
 alias tugba='cat ~/.config/ascii_art/bf_color.txt'
+alias vpnon='sh ~/.config/vpn/start.sh'
+alias vpnoff='sh ~/.config/vpn/stop.sh'
 

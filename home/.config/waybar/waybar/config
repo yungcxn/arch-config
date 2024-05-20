@@ -92,10 +92,10 @@
     "format-ethernet": " ",
     "format-linked": " ",
     "format-disconnected": "󰤮 ",
-    "format-alt": "{bandwidthDownBytes} - {bandwidthUpBytes}"
+    "format-alt": "{ifname}  "
 	},
 	"pulseaudio": {
-	  "format": "{icon} {volume}%",
+	  "format": "{icon}  {volume}%",
     "format-muted": "󰖁 Muted",
     "format-icons": {
       "headphone": "",
