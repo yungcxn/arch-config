@@ -1,18 +1,18 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Declare the list of plugins.
-Plug 'folke/tokyonight.nvim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'petertriho/nvim-scrollbar'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-colorscheme tokyonight-storm
-
 hi Normal guibg=NONE ctermbg=NONE
 
-lua require'colorizer'.setup()
+colorscheme catppuccin-mocha
+
+lua require("colorizer").setup()
 
 lua require("scrollbar").setup()
 set nocompatible

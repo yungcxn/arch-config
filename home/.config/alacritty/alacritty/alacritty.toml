@@ -1,12 +1,14 @@
-import = [ "~/.config/alacritty/theme.toml" ]
+import = [ "~/.config/alacritty/catppuccin-mocha.toml" ]
 
 shell = "/bin/zsh"
 
 live_config_reload = true
 
+[env]
+TERM = "xterm-256color"
+
 [window]
-dynamic_padding = false
-  
+dynamic_padding = false 
 
 [window.padding]
 x = 25

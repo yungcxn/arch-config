@@ -30,6 +30,8 @@ gather_from_to = {
   DOTCONFIG_LOC + "/ascii_art": cmap[1] + "/ascii_art",
   DOTCONFIG_LOC + "/wofi": cmap[1] + "/wofi",
   DOTCONFIG_LOC + "/Thunar": cmap[1] + "/Thunar",
+  DOTCONFIG_LOC + "/qt5ct": cmap[1] + "/qt5ct",
+  DOTCONFIG_LOC + "/qt6ct": cmap[1] + "/qt6ct",
   HOME_LOC + "/.vim": cmap[0] + "/.vim",
   HOME_LOC + "/.vimrc": cmap[0] + "/.vimrc",
   HOME_LOC + "/.oh-my-zsh": cmap[0] + "/.oh-my-zsh",
