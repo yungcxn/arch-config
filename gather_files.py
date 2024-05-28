@@ -20,39 +20,40 @@ cmap = [
 
 #single files
 gather_from_to = {
-  DOTCONFIG_LOC + "/alacritty": cmap[1] + "/alacritty",
-  DOTCONFIG_LOC + "/nvim": cmap[1] + "/nvim",
-  DOTCONFIG_LOC + "/zsh": cmap[1] + "/zsh",
-  DOTCONFIG_LOC + "/wlogout": cmap[1] + "/wlogout",
-  DOTCONFIG_LOC + "/hypr": cmap[1] + "/hypr",
-  DOTCONFIG_LOC + "/wallpapers": cmap[1] + "/wallpapers",
-  DOTCONFIG_LOC + "/waybar": cmap[1] + "/waybar",
-  DOTCONFIG_LOC + "/ascii_art": cmap[1] + "/ascii_art",
-  DOTCONFIG_LOC + "/wofi": cmap[1] + "/wofi",
-  DOTCONFIG_LOC + "/Thunar": cmap[1] + "/Thunar",
-  DOTCONFIG_LOC + "/qt5ct": cmap[1] + "/qt5ct",
-  DOTCONFIG_LOC + "/qt6ct": cmap[1] + "/qt6ct",
-  HOME_LOC + "/.vim": cmap[0] + "/.vim",
-  HOME_LOC + "/.vimrc": cmap[0] + "/.vimrc",
-  HOME_LOC + "/.oh-my-zsh": cmap[0] + "/.oh-my-zsh",
-  HOME_LOC + "/.icons": cmap[0] + "/.icons",
-  HOME_LOC + "/.themes": cmap[0] + "/.themes",
-  ETC_LOC + "/greetd": cmap[2] + "/greetd",
+  DOTCONFIG_LOC + "/alacritty": cmap[1],
+  DOTCONFIG_LOC + "/nvim": cmap[1],
+  DOTCONFIG_LOC + "/zsh": cmap[1],
+  DOTCONFIG_LOC + "/wlogout": cmap[1],
+  DOTCONFIG_LOC + "/hypr": cmap[1],
+  DOTCONFIG_LOC + "/wallpapers": cmap[1],
+  DOTCONFIG_LOC + "/waybar": cmap[1],
+  DOTCONFIG_LOC + "/ascii_art": cmap[1],
+  DOTCONFIG_LOC + "/wofi": cmap[1],
+  DOTCONFIG_LOC + "/Thunar": cmap[1],
+  DOTCONFIG_LOC + "/qt5ct": cmap[1],
+  DOTCONFIG_LOC + "/qt6ct": cmap[1],
+  HOME_LOC + "/.vim": cmap[0],
+  HOME_LOC + "/.vimrc": cmap[0],
+  HOME_LOC + "/.oh-my-zsh": cmap[0],
+  HOME_LOC + "/.icons": cmap[0],
+  HOME_LOC + "/.themes": cmap[0],
+  ETC_LOC + "/greetd": cmap[2],
 }
 
 gather_singles = {
-  HOME_LOC + "/.zshrc": cmap[0] + "/.zshrc",
-  HOME_LOC + "/.bashrc": cmap[0] + "/.bashrc",
-  HOME_LOC + "/.p10k.zsh": cmap[0] + "/.p10k.zsh",
-  DOTCONFIG_LOC + "/startup.sh" : cmap[1] + "/startup.sh",
-  DOTCONFIG_LOC + "/user-dirs.dirs" : cmap[1] + "/user-dirs.dirs",
-  DOTCONFIG_LOC + "/user-dirs.locale" : cmap[1] + "/user-dirs.locale",
+  HOME_LOC + "/.zshrc": cmap[0],
+  HOME_LOC + "/.bashrc": cmap[0],
+  HOME_LOC + "/.p10k.zsh": cmap[0],
+  DOTCONFIG_LOC + "/startup.sh" : cmap[1],
+  DOTCONFIG_LOC + "/user-dirs.dirs" : cmap[1],
+  DOTCONFIG_LOC + "/user-dirs.locale" : cmap[1],
 }
 
 # create non existing folder with recursion
 def create_folder(folder):
-  if not os.path.exists(folder):
-    os.makedirs(folder)
+  if os.path.exists(folder):
+      os.system(f'sudo rm -r {folder}')
+  os.makedirs(folder)
 
 # change cwd to the script directory
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -63,7 +64,7 @@ for value in gather_from_to.values():
 
 # copy files from gather_from_to from keys to values
 for key, value in gather_from_to.items():
-  os.system(f'cp -r {key} {value}')
+  os.system(f'sudo cp -r {key} {value}')
 
 # copy files from gather_singles from keys to values
 for key, value in gather_singles.items():

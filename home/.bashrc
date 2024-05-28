@@ -1,7 +1,7 @@
 #
 # ~/.bashrc
 #
-
+export JAVA_HOME=/usr/lib/jvm/default
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 

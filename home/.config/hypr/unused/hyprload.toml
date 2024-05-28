@@ -1,0 +1,3 @@
+plugins [
+  "Druckonaut/split-monitor-workspaces"
+]

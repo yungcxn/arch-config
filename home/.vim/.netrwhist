@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/can'
+let g:netrw_dirhist_4='/home/can/.config/waybar'
+let g:netrw_dirhist_3='/home/can/Desktop'
+let g:netrw_dirhist_2='/home/can/.config'
+let g:netrw_dirhist_1='/home/can/Downloads/Ja_Hyprland-dots/nvidia-all'
