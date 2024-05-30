@@ -22,7 +22,7 @@ cmap = [
 gather_from_to = {
   DOTCONFIG_LOC + "/alacritty": cmap[1],
   DOTCONFIG_LOC + "/nvim": cmap[1],
-  DOTCONFIG_LOC + "/zsh": cmap[1],
+  #DOTCONFIG_LOC + "/zsh": cmap[1],
   DOTCONFIG_LOC + "/wlogout": cmap[1],
   DOTCONFIG_LOC + "/hypr": cmap[1],
   DOTCONFIG_LOC + "/wallpapers": cmap[1],

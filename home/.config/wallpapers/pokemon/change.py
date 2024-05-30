@@ -34,5 +34,4 @@ if not os.path.exists(built_path):
   built_path = os.path.join(folder_path, f'{current_num}.png')
 
 send(built_path)
-  # sleep 1 minute
 

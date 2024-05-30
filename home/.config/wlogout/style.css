@@ -13,25 +13,26 @@ window {
 
 /** ********** Buttons ********** **/
 button {
-  color: #c0caf5;
-  border:10px solid #7aa2f7;
+  color: #f2cdcd;
+  border:10px solid #ca9ee6;
   border-radius: 0px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 40%;
   transition: all 0.2s ease-in-out;
   margin: 50px; 
-  background-color: #24283b;
+  background-color: #1e1e2e;
 }
 
 button:hover {
-  color: #a9b1d6;
-  background-color: #414868;
+  color: #1e1e2e;
+  background-color: #5c5f77;
   outline-style: none;
+  border-color: #a6e3a1;
 }
 
 button:focus {
-  border: 10px solid #9ece6a;
+  border: 10px solid #ca9ee6;
 }
 
 /** ********** Icons ********** **/
