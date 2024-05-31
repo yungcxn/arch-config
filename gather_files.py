@@ -32,11 +32,12 @@ gather_from_to = {
   DOTCONFIG_LOC + "/Thunar": cmap[1],
   DOTCONFIG_LOC + "/qt5ct": cmap[1],
   DOTCONFIG_LOC + "/qt6ct": cmap[1],
+  DOTCONFIG_LOC + "/mako": cmap[1],
   HOME_LOC + "/.vim": cmap[0],
   HOME_LOC + "/.vimrc": cmap[0],
-  HOME_LOC + "/.oh-my-zsh": cmap[0],
-  HOME_LOC + "/.icons": cmap[0],
-  HOME_LOC + "/.themes": cmap[0],
+  #HOME_LOC + "/.oh-my-zsh": cmap[0],
+  #HOME_LOC + "/.icons": cmap[0],
+  #HOME_LOC + "/.themes": cmap[0],
   ETC_LOC + "/greetd": cmap[2],
 }
 
@@ -45,8 +46,8 @@ gather_singles = {
   HOME_LOC + "/.bashrc": cmap[0],
   HOME_LOC + "/.p10k.zsh": cmap[0],
   DOTCONFIG_LOC + "/startup.sh" : cmap[1],
-  DOTCONFIG_LOC + "/user-dirs.dirs" : cmap[1],
-  DOTCONFIG_LOC + "/user-dirs.locale" : cmap[1],
+  #DOTCONFIG_LOC + "/user-dirs.dirs" : cmap[1],
+  #DOTCONFIG_LOC + "/user-dirs.locale" : cmap[1],
 }
 
 # create non existing folder with recursion
@@ -68,4 +69,6 @@ for key, value in gather_from_to.items():
 
 # copy files from gather_singles from keys to values
 for key, value in gather_singles.items():
-  os.system(f'cp {key} {value}')
+  os.system(f'sudo cp {key} {value}')
+
+os.system('sudo chown -R can .')

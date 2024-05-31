@@ -14,4 +14,5 @@ alias config='cd ~/.config'
 alias tugba='python3 ~/Documents/quickquran/quickquran.py -r -t 1'
 alias vpnon='sh ~/.config/vpn/start.sh'
 alias vpnoff='sh ~/.config/vpn/stop.sh'
+alias open='hyprctl dispatch execr'
 

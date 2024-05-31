@@ -1,0 +1,12 @@
+# Colors
+
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+progress-color=over #313244
+font='RobotoMono Nerd Font Mono'
+default-timeout=5000
+on-notify=exec mpv ~/.config/mako/noti.mkv --no-video --volume=60
+
+[urgency=high]
+border-color=#fab387
