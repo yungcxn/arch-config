@@ -9,6 +9,7 @@ TERM = "xterm-256color"
 
 [window]
 dynamic_padding = false 
+opacity = 0.95
 
 [window.padding]
 x = 25

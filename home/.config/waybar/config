@@ -8,6 +8,14 @@
     "cpu",
     "network"
   ],
+  //"modules-center": [
+  //  "image/pokemona",
+  //  "image/pokemonb",
+  //  "image/pokemonc",
+  //  "image/pokemond",
+  //  "image/pokemone",
+  //  "image/pokemonf"
+  //],
   "modules-right": ["pulseaudio", "custom/date", "clock", "custom/power"],
   "hyprland/workspaces": {
 		"disable-scroll": false,
@@ -22,7 +30,7 @@
 	 		"6": [],
 	 		"7": [],
 	 		"8": [],
-	 		"9": [],
+	 		"9": []
 	    },
       "format-icons": {
             "1": "1",
@@ -33,7 +41,7 @@
             "6": "3",
             "7": "1",
             "8": "2",
-         		"9": "3",
+         		"9": "3"
       }
   },
   "cpu": {
@@ -49,11 +57,6 @@
       "<span color='#ff9977'>▇</span>", // orange
       "<span color='#dd532e'>█</span>"  // red
     ]
-  },
-  "custom/date": {
-    "format": "󰸗 {}",
-    "interval": 3600,
-    "exec": "date + '%a %d'"
   },
   "custom/power": {
     "format": "󰐥",
@@ -107,24 +110,28 @@
       "default": ["", "", ""]
     }
   },
-  "custom/discord": {
-    "format":" ",
-    "on-click": "hyprctl dispatch exec '/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=startvesktop dev.vencord.Vesktop'"
+  "image": {
+    "path": "~/.config/waybar/pokemon/1.png",
+    "size": 28
   },
-  "custom/firefox": {
-    "format": "󰈹 ",
-    "on-click": "hyprctl dispatch exec firefox"
+  "image/pokemonb": {
+    "path": "~/.config/waybar/pokemon/2.png",
+    "size": 28
   },
-"custom/thunar": {
-    "format": " ",
-    "on-click": "hyprctl dispatch exec thunar"
+  "image/pokemonc": {
+    "path": "~/.config/waybar/pokemon/3.png",
+    "size": 28
   },
-"custom/alacritty": {
-    "format": " ",
-    "on-click": "hyprctl dispatch exec alacritty"
+  "image/pokemond": {
+    "path": "~/.config/waybar/pokemon/4.png",
+    "size": 28
   },
-"custom/hypr": {
-    "format": "",
-    "on-click": "hyprctl dispatch exec 'alacritty -e vim ~/.config/hypr/hyprland.conf'"
+  "image/pokemone": {
+    "path": "~/.config/waybar/pokemon/5.png",
+    "size": 28
+  },
+  "image/pokemonf": {
+    "path": "~/.config/waybar/pokemon/6.png",
+    "size": 28
   }
 }

@@ -2,7 +2,7 @@
 size = 13.0
 
 [font.normal]
-family = "RobotoMono Nerd Font"
+family = "RobotoMono Nerd Font Mono"
 style = "Regular"
 
 [colors.primary]
