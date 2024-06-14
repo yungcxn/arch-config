@@ -2,6 +2,8 @@ import os
 
 def send(path):
   os.system(f'swww img -f Nearest --transition-type center --transition-pos 0.5,0.5 --transition-fps 150 --transition-duration 2 --transition-step 255 {path}')
+  #os.system(f'swww img -f Nearest --transition-type center --transition-pos 0.5,0.5 --transition-fps 150 --transition-duration 2 --transition-step 255 {path} -o \'DP-1\'')
+  #os.system(f'swww img -f Nearest --transition-type center --transition-pos 0.5,0.5 --transition-fps 150 --transition-duration 2 --transition-step 255 {path} -o \'DP-2\'')
 
 def create_config():
   with open('config.txt', 'w') as f:

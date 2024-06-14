@@ -1,3 +1,4 @@
+sleep 10
 hyprctl dispatch focusmonitor DP-1
 imv ~/.config/waybar/pokemon/1.png -u nearest_neighbour -b 1E1E2E -s full -W 30 -H 30 -w 'imv1' &
 imv ~/.config/waybar/pokemon/2.png -u nearest_neighbour -b 1E1E2E -s full -W 30 -H 30 -w 'imv2' &
