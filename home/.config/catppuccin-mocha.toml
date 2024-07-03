@@ -1,9 +1,10 @@
 [font]
-size = 13.0
+size = 14.0
 
 [font.normal]
-family = "RobotoMono Nerd Font Mono"
+family = "GohuFont uni14 Nerd Font Mono"
 style = "Regular"
+# family = "RobotoMono Nerd Font Mono"
 
 [colors.primary]
 background = "#1e1e2e"

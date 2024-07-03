@@ -1,22 +1,16 @@
 {
   "position": "top", 
-  "height": 30,
   "output": "DP-1",
   "modules-left": [
     "custom/launcher",
     "hyprland/workspaces",
     "cpu",
-    "network"
+    "disk"
   ],
-  //"modules-center": [
-  //  "image/pokemona",
-  //  "image/pokemonb",
-  //  "image/pokemonc",
-  //  "image/pokemond",
-  //  "image/pokemone",
-  //  "image/pokemonf"
-  //],
-  "modules-right": ["pulseaudio", "custom/date", "clock", "custom/power"],
+  "modules-center": [
+    "custom/windowtitle"
+  ],
+  "modules-right": ["network", "pulseaudio", "custom/date", "clock", "custom/power"],
   "hyprland/workspaces": {
 		"disable-scroll": false,
 		"all-outputs": true,
@@ -26,23 +20,30 @@
     "interval": 1,
     "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}",
     "format-icons": [
-      "<span color='#69ff94'>▁</span>", // green
-      "<span color='#2aa9ff'>▂</span>", // blue
-      "<span color='#f8f8f2'>▃</span>", // white
-      "<span color='#f8f8f2'>▄</span>", // white
-      "<span color='#ffffa5'>▅</span>", // yellow
-      "<span color='#ffffa5'>▆</span>", // yellow
-      "<span color='#ff9977'>▇</span>", // orange
-      "<span color='#dd532e'>█</span>"  // red
+      "<span color='#a6e3a1'>▁</span>", // green
+      "<span color='#89b4fa'>▂</span>", // blue
+      "<span color='#b4befe'>▃</span>", // white
+      "<span color='#9399b2'>▄</span>", // white
+      "<span color='#f9e2af'>▅</span>", // yellow
+      "<span color='#fab387'>▆</span>", // yellow
+      "<span color='#eba0ac'>▇</span>", // orange
+      "<span color='#f38ba8'>█</span>"  // red
     ]
   },
   "custom/power": {
     "format": "󰐥",
     "on-click": "sh ~/.config/wlogout/launch.sh"
 	},
+  "disk": {
+	"interval": 5,
+	"format": "{specific_used:0.2f} / {specific_total:0.2f} GB",
+  "tooltip-format": "{specific_used:0.2f} GB used, {specific_free:0.2f} GB free",
+	"unit": "GB",
+  "on-click": "hyprctl dispatch exec 'alacritty -e gdu'N"
+  },
   "clock": {
-    "format": "{:%H:%M}",
-    "format-alt": "{:%d.%m.%Y - %R}",
+    "format-alt": "{:%H:%M}",
+    "format": "{:%d.%m.%Y, %R}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode"          : "year",
@@ -75,6 +76,10 @@
     "format-disconnected": "󰤮 ",
     "format-alt": "{ifname}  "
 	},
+  "custom/windowtitle": {
+    "exec": "hyprctl activeworkspace | tail -2 | head -n 1 | sed 's/lastwindowtitle: //'",
+    "interval": 1
+  },
 	"pulseaudio": {
 	  "format": "{icon}  {volume}%",
     "format-muted": "󰖁 Muted",

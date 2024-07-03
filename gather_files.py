@@ -7,10 +7,9 @@ This file is ran by me on my Arch Linux Installation to gather all config files
 
 import os
 
-HOME_LOC = os.path.expanduser("~")
+HOME_LOC = "/home/can"
 DOTCONFIG_LOC = HOME_LOC + "/.config"
 ETC_LOC = "/etc"
-
 
 cmap = [
   "home",
@@ -71,4 +70,11 @@ for key, value in gather_from_to.items():
 for key, value in gather_singles.items():
   os.system(f'sudo cp {key} {value}')
 
-os.system('sudo chown -R can .')
+# for every file in this and subdirectories, remove videos bigger than 100mb
+for root, dirs, files in os.walk("."):
+  for file in files:
+    if os.path.getsize(os.path.join(root, file)) > 100000000:
+      os.system(f'sudo rm {os.path.join(root, file)}')
+      print(f"Removed {os.path.join(root, file)}")
+
+os.system("sudo chown -R can:can .")

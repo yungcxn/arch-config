@@ -62,6 +62,10 @@ window#waybar {
   color: @green;
 }
 
+#disk{
+  color: @overlay0;
+}
+
 
 #workspaces {
 	background-color: @base;
