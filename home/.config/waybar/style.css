@@ -3,11 +3,13 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: RobotoMono Nerd Font;
+    font-family: CozetteHiDpi;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
     min-height: 0;
     color: @text;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 tooltip {
@@ -38,9 +40,8 @@ window#waybar {
 	color: @base;
 	background-color: @red;
 	border-radius: 5px;
-	margin: 3px 3px;
-	padding: 1px 5px;
-  padding-right: 6px;
+	margin: 1px 3px;
+	padding: 0px 6px;
 }
 
 #custom-power button:hover {

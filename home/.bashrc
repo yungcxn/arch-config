@@ -5,6 +5,8 @@ export JAVA_HOME=/usr/lib/jvm/default
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+PATH="${PATH}:/home/can/.local/bin"
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '

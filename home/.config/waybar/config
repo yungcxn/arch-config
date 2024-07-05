@@ -28,7 +28,8 @@
       "<span color='#fab387'>▆</span>", // yellow
       "<span color='#eba0ac'>▇</span>", // orange
       "<span color='#f38ba8'>█</span>"  // red
-    ]
+    ],
+    "on-click": "hyprctl dispatch exec 'alacritty -e htop'"
   },
   "custom/power": {
     "format": "󰐥",
@@ -39,7 +40,7 @@
 	"format": "{specific_used:0.2f} / {specific_total:0.2f} GB",
   "tooltip-format": "{specific_used:0.2f} GB used, {specific_free:0.2f} GB free",
 	"unit": "GB",
-  "on-click": "hyprctl dispatch exec 'alacritty -e gdu'N"
+  "on-click": "hyprctl dispatch exec 'alacritty -e gdu'"
   },
   "clock": {
     "format-alt": "{:%H:%M}",
@@ -67,7 +68,7 @@
     }
   },
   "custom/launcher" : {
-    "format": " c n" 
+    "format": " c  n" 
   },
   "network": {
     "format-wifi": "🔗",
@@ -77,7 +78,7 @@
     "format-alt": "{ifname}  "
 	},
   "custom/windowtitle": {
-    "exec": "hyprctl activeworkspace | tail -2 | head -n 1 | sed 's/lastwindowtitle: //'",
+    "exec": "hyprctl activeworkspace | tail -n 3 | head -n 1 | sed 's/lastwindowtitle: //'",
     "interval": 1
   },
 	"pulseaudio": {

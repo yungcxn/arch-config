@@ -1,7 +1,7 @@
 #!/bin/bash
 # Dispatch command to kill the active window
 hyprctl dispatch killactive
-sleep 0.01
+sleep 0.1
 
 # Capture the current workspace
 current_workspace=$(hyprctl activeworkspace)

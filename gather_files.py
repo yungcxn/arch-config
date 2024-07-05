@@ -1,80 +1,78 @@
-'''
-Copyright (c) yungcxn
-
-This file is ran by me on my Arch Linux Installation to gather all config files
-
-'''
-
 import os
 
 HOME_LOC = "/home/can"
 DOTCONFIG_LOC = HOME_LOC + "/.config"
 ETC_LOC = "/etc"
+GTK_THEMES_LOC = "/usr/share/themes/"
 
-cmap = [
-  "home",
-  "home/.config",
-  "etc",
-]
+cmap = {
+    "home": "./home/",
+    "config": "./home/.config/",
+    "etc": "./etc/",
+    "themes": "./usr/share/themes/"
+}
 
-#single files
+# Config files and directories to gather
 gather_from_to = {
-  DOTCONFIG_LOC + "/alacritty": cmap[1],
-  DOTCONFIG_LOC + "/nvim": cmap[1],
-  #DOTCONFIG_LOC + "/zsh": cmap[1],
-  DOTCONFIG_LOC + "/wlogout": cmap[1],
-  DOTCONFIG_LOC + "/hypr": cmap[1],
-  DOTCONFIG_LOC + "/wallpapers": cmap[1],
-  DOTCONFIG_LOC + "/waybar": cmap[1],
-  DOTCONFIG_LOC + "/ascii_art": cmap[1],
-  DOTCONFIG_LOC + "/wofi": cmap[1],
-  DOTCONFIG_LOC + "/Thunar": cmap[1],
-  DOTCONFIG_LOC + "/qt5ct": cmap[1],
-  DOTCONFIG_LOC + "/qt6ct": cmap[1],
-  DOTCONFIG_LOC + "/mako": cmap[1],
-  HOME_LOC + "/.vim": cmap[0],
-  HOME_LOC + "/.vimrc": cmap[0],
-  #HOME_LOC + "/.oh-my-zsh": cmap[0],
-  #HOME_LOC + "/.icons": cmap[0],
-  #HOME_LOC + "/.themes": cmap[0],
-  ETC_LOC + "/greetd": cmap[2],
+    DOTCONFIG_LOC + "/alacritty/": cmap["config"],
+    DOTCONFIG_LOC + "/nvim/": cmap["config"],
+    #DOTCONFIG_LOC + "/zsh": cmap["config"],
+    DOTCONFIG_LOC + "/wlogout/": cmap["config"],
+    DOTCONFIG_LOC + "/hypr/": cmap["config"],
+    DOTCONFIG_LOC + "/wallpapers/": cmap["config"],
+    DOTCONFIG_LOC + "/waybar/": cmap["config"],
+    DOTCONFIG_LOC + "/ascii_art/": cmap["config"],
+    DOTCONFIG_LOC + "/wofi/": cmap["config"],
+    DOTCONFIG_LOC + "/Thunar/": cmap["config"],
+    DOTCONFIG_LOC + "/qt5ct/": cmap["config"],
+    DOTCONFIG_LOC + "/qt6ct/": cmap["config"],
+    DOTCONFIG_LOC + "/mako/": cmap["config"],
+    HOME_LOC + "/.vim/": cmap["home"],
+    #HOME_LOC + "/.oh-my-zsh": cmap["home"],
+    #HOME_LOC + "/.icons": cmap["home"],
+    #HOME_LOC + "/.themes": cmap["home"],
+    ETC_LOC + "/greetd/": cmap["etc"],
+    GTK_THEMES_LOC: cmap["themes"]
 }
 
+# Single files to gather
 gather_singles = {
-  HOME_LOC + "/.zshrc": cmap[0],
-  HOME_LOC + "/.bashrc": cmap[0],
-  HOME_LOC + "/.p10k.zsh": cmap[0],
-  DOTCONFIG_LOC + "/startup.sh" : cmap[1],
-  #DOTCONFIG_LOC + "/user-dirs.dirs" : cmap[1],
-  #DOTCONFIG_LOC + "/user-dirs.locale" : cmap[1],
+    HOME_LOC + "/.zshrc": cmap["home"],
+    HOME_LOC + "/.bashrc": cmap["home"],
+    HOME_LOC + "/.p10k.zsh": cmap["home"],
+    DOTCONFIG_LOC + "/startup.sh": cmap["config"],
+    HOME_LOC + "/.vimrc": cmap["home"],
+    #DOTCONFIG_LOC + "/user-dirs.dirs": cmap["config"],
+    #DOTCONFIG_LOC + "/user-dirs.locale": cmap["config"],
 }
 
-# create non existing folder with recursion
+# Create non-existing folders
 def create_folder(folder):
-  if os.path.exists(folder):
-      os.system(f'sudo rm -r {folder}')
-  os.makedirs(folder)
+    if not os.path.exists(folder):
+        os.makedirs(folder)
 
-# change cwd to the script directory
+# Change to the script directory
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
-# create the folder to store the files, gather_from_to values
-for value in gather_from_to.values():
-  create_folder(value)
+# Create destination directories
+for value in set(gather_from_to.values()):
+    create_folder(value)
 
-# copy files from gather_from_to from keys to values
-for key, value in gather_from_to.items():
-  os.system(f'sudo cp -r {key} {value}')
+# Copy directories
+for src, dst in gather_from_to.items():
+    os.system(f'sudo cp -r {src} {dst}')
 
-# copy files from gather_singles from keys to values
-for key, value in gather_singles.items():
-  os.system(f'sudo cp {key} {value}')
+# Copy single files
+for src, dst in gather_singles.items():
+    os.system(f'sudo cp {src} {dst}')
 
-# for every file in this and subdirectories, remove videos bigger than 100mb
-for root, dirs, files in os.walk("."):
-  for file in files:
-    if os.path.getsize(os.path.join(root, file)) > 100000000:
-      os.system(f'sudo rm {os.path.join(root, file)}')
-      print(f"Removed {os.path.join(root, file)}")
+# Remove large video files
+for root, _, files in os.walk("."):
+    for file in files:
+        file_path = os.path.join(root, file)
+        if os.path.getsize(file_path) > 100000000:
+            os.system(f'sudo rm {file_path}')
+            print(f"Removed {file_path}")
 
+# Change ownership
 os.system("sudo chown -R can:can .")
