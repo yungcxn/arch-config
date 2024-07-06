@@ -11,4 +11,3 @@ source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export EDITOR=nvim
 clear
-tugba

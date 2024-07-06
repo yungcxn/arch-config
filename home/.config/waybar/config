@@ -1,14 +1,11 @@
 {
   "position": "top", 
-  "output": "DP-1",
+  "output": "eDP-1",
   "modules-left": [
     "custom/launcher",
     "hyprland/workspaces",
     "cpu",
     "disk"
-  ],
-  "modules-center": [
-    "custom/windowtitle"
   ],
   "modules-right": ["network", "pulseaudio", "custom/date", "clock", "custom/power"],
   "hyprland/workspaces": {
@@ -32,7 +29,7 @@
     "on-click": "hyprctl dispatch exec 'alacritty -e htop'"
   },
   "custom/power": {
-    "format": "󰐥",
+    "format": " ",
     "on-click": "sh ~/.config/wlogout/launch.sh"
 	},
   "disk": {
@@ -71,7 +68,7 @@
     "format": " c  n" 
   },
   "network": {
-    "format-wifi": "🔗",
+    "format-wifi": "",
     "format-ethernet": " ",
     "format-linked": " ",
     "format-disconnected": "󰤮 ",

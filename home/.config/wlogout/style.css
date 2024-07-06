@@ -1,7 +1,7 @@
 /** ********** Fonts ********** **/
 * {
   font-family: "RobotoMono Nerd Font";
-  font-size: 30px;
+  font-size: 0px;
   font-weight: bold;
   background-image: none;
 }
@@ -14,7 +14,7 @@ window {
 /** ********** Buttons ********** **/
 button {
   color: #f2cdcd;
-  border:10px solid #ca9ee6;
+  border:3px solid #ca9ee6;
   border-radius: 0px;
   background-repeat: no-repeat;
   background-position: center;
@@ -32,7 +32,7 @@ button:hover {
 }
 
 button:focus {
-  border: 10px solid #ca9ee6;
+  border: 3px solid #ca9ee6;
 }
 
 /** ********** Icons ********** **/
