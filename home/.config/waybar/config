@@ -7,12 +7,22 @@
     "cpu",
     "disk"
   ],
-  "modules-right": ["network", "pulseaudio", "custom/date", "clock", "custom/power"],
+  "modules-right": ["battery", "network", "pulseaudio", "custom/date", "clock", "custom/power"],
   "hyprland/workspaces": {
 		"disable-scroll": false,
 		"all-outputs": true,
 		"format": "{icon}"
   },
+  "battery": {
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
+  }, 
   "cpu": {
     "interval": 1,
     "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}",
@@ -41,28 +51,7 @@
   },
   "clock": {
     "format-alt": "{:%H:%M}",
-    "format": "{:%d.%m.%Y, %R}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode"          : "year",
-      "mode-mon-col"  : 3,
-      "weeks-pos"     : "right",
-      "on-scroll"     : 1,
-      "format": {
-        "months":     "<span color='#ffead3'><b>{}</b></span>",
-        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-      }
-    },
-    "actions":  {
-      "on-click-right": "mode",
-      "on-click-forward": "tz_up",
-      "on-click-backward": "tz_down",
-      "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    }
+    "format": "{:%d.%m.%Y, %R}"
   },
   "custom/launcher" : {
     "format": " c  n" 
@@ -80,7 +69,7 @@
   },
 	"pulseaudio": {
 	  "format": "{icon}  {volume}%",
-    "format-muted": "󰖁 Muted",
+    "format-muted": "Muted",
     "format-icons": {
       "headphone": "",
       "hands-free": "",

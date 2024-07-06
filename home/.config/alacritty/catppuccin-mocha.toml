@@ -1,9 +1,8 @@
 [font]
-size = 20.0
+size = 15.0
 
 [font.normal]
 family = "CozetteVector"
-style = "Regular"
 # family = "RobotoMono Nerd Font Mono"
 
 [colors.primary]
