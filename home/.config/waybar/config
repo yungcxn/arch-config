@@ -78,7 +78,7 @@
     "format-alt": "{ifname}  "
 	},
   "custom/windowtitle": {
-    "exec": "hyprctl activeworkspace | tail -n 3 | head -n 1 | sed 's/lastwindowtitle: //'",
+    "exec": "hyprctl activeworkspace | tail -n 3 | head -n 1 | sed 's/lastwindowtitle: //' | xargs",
     "interval": 1
   },
 	"pulseaudio": {

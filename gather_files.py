@@ -27,6 +27,7 @@ gather_from_to = {
     DOTCONFIG_LOC + "/qt5ct/": cmap["config"],
     DOTCONFIG_LOC + "/qt6ct/": cmap["config"],
     DOTCONFIG_LOC + "/mako/": cmap["config"],
+    DOTCONFIG_LOC + "/Code/": cmap["config"],
     HOME_LOC + "/.vim/": cmap["home"],
     #HOME_LOC + "/.oh-my-zsh": cmap["home"],
     #HOME_LOC + "/.icons": cmap["home"],
